@@ -83,6 +83,15 @@
                     showResults(results);
                 })
         }
+
+        function searchByAttribute() {
+            let selectedAttribute = $("#attribute").val();
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.equalTo("Attribute",selectedAttribute).fetchAll().then(function(results){
+                showResults(results);
+            });
+        }
+
     </script>
 </head>
 
@@ -98,7 +107,7 @@
     </div>
 
     <div>
-        <label for="attributes">advantageous attributes:</label>
+        <label for="attribute">attributes:</label>
         <select id="attribute">
             <option value="炎">炎</option>
             <option value="草">草</option>
