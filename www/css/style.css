@@ -24,10 +24,10 @@ input {
 .btn {
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 16pt;
-  height: 4ex;
-  width: 5em;
-  border-radius: 10px;
+  font-size: 13pt;
+  height: 5ex;
+  width: 7em;
+  border-radius: 20px;
   color: white;
   background-color: blue;
 }
