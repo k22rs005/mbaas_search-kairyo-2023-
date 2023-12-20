@@ -92,6 +92,30 @@
             });
         }
 
+        function advantageousPokemon() {
+            let selectedAttribute = $("#attribute").val();
+            let advantageousAttribute;
+            switch (selectedAttribute) {
+                case "炎":
+                    advantageousAttribute = "水";
+                    break;
+                case "水":
+                    advantageousAttribute = "草";
+                    break;
+                case "草":
+                    advantageousAttribute = "炎";
+                    break;
+                default:
+                    console.error("Invalid attribute selection");
+                    return;
+            }
+
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.equalTo("Attribute", advantageousAttribute).fetchAll().then(function(results){
+                showResults(results);
+            });
+        }
+
     </script>
 </head>
 
@@ -123,7 +147,7 @@
         <button class="btn" onclick="searchLevel()">Level</button>
         <button class="btn" onclick="searchLevelGT()">Level &gt</button>
         <button class="btn" onclick="searchByAttribute()">S-attributes</button>
-        <button class="btn" onclick="S-Advantageous Pokemon()">Advantageous Pokemon</button>
+        <button class="btn" onclick="advantageousPokemon()">Advantageous Pokemon</button>
     </div>
 
 
